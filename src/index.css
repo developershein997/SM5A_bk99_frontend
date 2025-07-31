@@ -1,0 +1,739 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body{
+  font-family: "Kanit", sans-serif;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  background: #212121;
+  color: white;
+  overflow-x: hidden !important;
+}
+.reelsContainer{
+  height: 100vh;
+}
+ .videocard__video{
+  width: 100%;
+}
+.infoHeading{
+  background: linear-gradient(180deg, #08363e 10%, #081E26 80%);
+}
+.bg-warning{
+  background-color: #5800a5 !important;
+}
+.bg-light{
+  background: #9e9e9e57 !important;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+/* ::-webkit-scrollbar-track {
+  background: #DEBF5E; 
+} */
+ 
+/* Handle */
+/* ::-webkit-scrollbar-thumb {
+  background: #AD0100; 
+  border-radius: 5px;
+} */
+
+ 
+.flag{
+  width: 30px;
+  height: 30px;
+}
+.app-gradient{
+  background: linear-gradient(110deg, #3a0073 20%, #2000a1 70%);
+}
+ button{
+  border: none;
+ }
+.cursor-pointer{
+  cursor: pointer;
+}
+.h-max{
+  height: max-content;
+}
+.w-max{
+  width: max-content;
+}
+p{
+  margin: 0;
+  padding: 0;
+}
+a{
+  text-decoration: none;
+  color: inherit;
+}
+.footerMarqueeImg{
+  height: 50px;
+  width: auto;
+  object-fit: cover;
+}
+.swiper-pagination-bullet{
+  background: gainsboro;
+}
+.swiper-pagination-bullet-active{
+  background: linear-gradient(180deg, #c99f36 -5.81%, #fae488 43.27%, #fae488 45.71%, #fae488 48.07%, #fae488 50.7%, #fae488 53.63%, #f6df82 56.18%, #f2da7c 58.53%, #b3841b 100%);
+}
+.bannerImg{
+  width: 100%;
+  height: 300px;
+object-position: center;
+}
+.w-full{
+  width: 100%;
+}
+.promotionImg{
+  height: 300px;
+  width: 100%;
+}
+.socialContactImg{
+  width: 40px;
+  height: 40px;
+}
+.popUpImg{
+  width: 100%;
+  height: 280px;
+ }
+.modal{
+  /* margin-top: 20vh !important; */
+  --bs-modal-bg: none !important;
+}
+.modalCloseBtn{
+  background: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.provider_list {
+  overflow-x: auto;
+  width: 100%;
+  height: auto;
+}
+
+/* Thin scrollbar */
+.provider_list::-webkit-scrollbar {
+  height: 6px; /* for horizontal scrollbar */
+}
+
+.provider_list::-webkit-scrollbar-thumb {
+  background: #ccc; /* color of the scroll thumb */
+  border-radius: 3px;
+}
+
+.provider_list::-webkit-scrollbar-track {
+  background: transparent; /* background of the scrollbar track */
+}
+
+.nav-design {
+  background-color: black ;
+  margin-top: 10px;
+  padding: 5px 100px;
+  border-radius: 100px;
+  margin-bottom: 7px;
+}
+
+.vertical-design {
+  padding-top : 7px;
+  rotate: 90deg;
+  font-size: 23px;
+  margin-left: 10px;
+}
+
+/*.nav-btn {*/
+/*  width: 100px;*/
+/*  height: 100px;*/
+/*  margin-right: 20px;*/
+/*  !* margin: 0 20px; *!*/
+/*}*/
+
+.nav-btn {
+      font-size: 15px;
+ width: 150px;
+  height: 50px;
+  /* padding-bottom: 15px; */
+    margin-top: 5px;
+  text-align: center;
+  padding-bottom: 30px;
+  /*margin-right: 20px;*/
+}
+
+.nav-btn-2 {
+  text-align: start !important;
+}
+
+.img-margin {
+  /*margin-left: 50px;*/
+  /*margin-right: 250px;*/
+}
+
+.exchange-padding {
+  padding-top: 10px;
+}
+
+.nav-sideBarBtn {
+  font-size: 10px;
+  width: 50px;
+  height: 50px;
+  /* padding-bottom: 15px; */
+  margin-left: 20px;
+  margin-top: 5px;
+  text-align: center;
+  padding-bottom: 3px;
+  margin-right: 4px;
+}
+
+.logoSize {
+  width: 130px;
+  height: 60px;
+}
+
+  .flag{
+
+    width: 35px;
+    height: 39px;
+  }
+
+  .gameTabDesign {
+    width: 100px;
+    height: 70px;
+    padding-top: 5px;
+  }
+
+  .auth-btn {
+    padding-top: 10px;
+    font-size: 15px;
+    width: 150px;
+    height: 50px;
+    /* padding-bottom: 15px; */
+    margin-top: 5px;
+    text-align: center;
+    /*padding-bottom: 30px;*/
+    /*margin-right: 20px;*/
+  }
+/* 
+  .providerDesign {
+    width: 250px;
+    height: 200px;
+    margin-right: 38px;
+  } */
+
+  .card-ratio {
+    width: 150px ;
+    height: 150px;
+  }
+
+  
+  .gameTabFontSize {
+    font-size: 16px;
+  }
+
+
+.placeholder-white::placeholder {
+  color: white;
+}
+
+.card-subnav-search {
+  width: 200px;
+  height: 30px;
+  border-radius: 15px;
+  padding-left: 10px;
+  border: none;
+}
+.offcanvasDesign {
+  background-color: #1e1e1e;
+  color: white;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.7);
+  width: 280px;
+  height: 560px;
+  max-height: 100vh;
+  overflow-y: auto;
+  position: fixed;
+  top: 20% !important;
+  right: 0;
+}
+
+
+
+@media (max-width: 1300px) {
+  .nav-design {
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 40px;
+     padding-bottom: 5px;
+       margin-bottom: 10px;
+  }
+
+  /* .offcanvasDesign {
+  background-color: #1e1e1e;
+  color: white;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.7);
+  width: 280px;
+  height: 500px;
+  max-height: 100vh;
+  overflow-y: auto;
+  position: fixed;
+  top: 25% !important ;
+  right: 0;
+} */
+
+  .auth-btn {
+    /*padding-top: 13px;*/
+    font-size: 15px;
+    width: 120px;
+    height: 45px;
+    /* padding-bottom: 15px; */
+    margin-top: 5px;
+    text-align: center;
+    padding-bottom: 30px;
+    /*margin-right: 20px;*/
+  }
+
+    .nav-btn {
+      font-size: 13px;
+
+  width: 130px;
+  height: 50px;
+  /* padding-bottom: 15px; */
+    margin-top: 5px;
+  text-align: center;
+  padding-bottom: 25px;
+  margin-right: 4px;
+}
+
+    .logoSize {
+  width: 60px;
+  height: 40px;
+}
+
+ .flag{
+     /* margin-top: 4px; */
+    width: 30px;
+    height: 35px;
+  }
+
+  .nav-sideBarBtn {
+      font-size: 10px;
+  width: 50px;
+  height: 50px;
+  /* padding-bottom: 15px; */
+  margin-top: 5px;
+  text-align: center;
+  padding-bottom: 3px;
+  margin-right: 4px;
+}
+
+  /* .providerDesign {
+    width: 230px !important;
+    height: 180px;
+    margin-right: 38px;
+  } */
+
+    .card-ratio {
+    width: 150px ;
+    height: 150px;
+  }
+
+  .gameTabFontSize {
+    font-size: 10px;
+  }
+
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+  .nav-design {
+    padding: 10px;
+    margin-top: 8px;
+    border-radius: 60px;
+  }
+
+  .auth-btn {
+    /*padding-top: 13px;*/
+    font-size: 13px;
+    width: 100px;
+    height: 50px;
+    /* padding-bottom: 15px; */
+    margin-top: 5px;
+    text-align: center;
+    padding-bottom: 8px;
+    /*margin-right: 20px;*/
+  }
+
+  /*.mobile-view {*/
+  /*  display: none;*/
+  /*}*/
+
+  /* .nav-btn {
+  width: 100px;
+  height: 37px;
+  margin-right: 10px;
+} */
+
+  .vertical-design {
+    padding-top : 10px;
+    rotate: 90deg;
+    font-size: 18px;
+    margin-left: 10px;
+  }
+
+  .nav-btn {
+    font-size: 13px;
+    width: 150px;
+  height: 50px;
+  /* padding-bottom: 15px; */
+    margin-top: 5px;
+  text-align: center;
+  padding-bottom: 25px;
+  margin-right: 10px;
+}
+
+   .nav-sideBarBtn {
+      font-size: 10px;
+  width: 50px;
+  height: 50px;
+  /* padding-bottom: 15px; */
+  margin-top: 5px;
+  text-align: center;
+  padding-bottom: 5px;
+  margin-right: 4px;
+}
+
+
+  .logoSize {
+  width: 80px;
+  height: 40px;
+}
+
+  .flag{
+    /* margin-top: 4px; */
+    width: 35px;
+    height: 37px;
+  }
+
+ /* .providerDesign {
+    width: 200px !important;
+    height: 180px;
+    margin-right: 38px;
+  } */
+
+  .card-ratio {
+    width: 120px ;
+    height: 120px;
+  }
+
+   .gameTabFontSize {
+    font-size: 10px;
+  }
+
+
+
+}
+
+
+@media (max-width: 576px) {
+  .nav-design {
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 40px;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+  }
+    .mobile-view {
+    display: none;
+  }
+
+  .auth-btn {
+    padding-top: 13px;
+    font-size: 12px;
+    width: 100px;
+    height: 20px;
+    /* padding-bottom: 15px; */
+    margin-top: 5px;
+    text-align: center;
+    padding-bottom: 27px;
+    /*margin-right: 20px;*/
+  }
+
+
+    .nav-btn {
+      font-size: 13px;
+
+  width: 130px;
+  height: 50px;
+  /* padding-bottom: 15px; */
+    margin-top: 5px;
+  text-align: center;
+  padding-bottom: 15px;
+  margin-right: 4px;
+}
+
+    .logoSize {
+  width: 60px;
+  height: 40px;
+}
+
+ .flag{
+     /* margin-top: 4px; */
+    width: 30px;
+    height: 35px;
+  }
+
+     .nav-sideBarBtn {
+      font-size: 10px;
+  width: 50px;
+  height: 47px;
+  /* padding-bottom: 15px; */
+  margin-top: 5px;
+  text-align: center;
+  padding-bottom: 5px;
+  margin-right: 4px;
+}
+
+ .providerDesign {
+    width: 100px;
+    height: 130px;
+    margin-right: 38px;
+  }
+
+    .card-ratio {
+    width: 100px ;
+    height: 100px;
+  }
+
+  .gameTabFontSize {
+    font-size: 10px;
+  }
+
+   .gameTabFontSize {
+    font-size: 10px;
+  }
+
+
+}
+
+@media (max-width: 420px) {
+  .nav-design {
+    padding: 2px;
+    padding-bottom: 10px;
+    /* margin-top: 5px; */
+    border-radius: 40px;
+    margin-bottom: 5px;
+  }
+
+  .auth-btn {
+    padding-top: 13px;
+    font-size: 8px;
+    width: 80px;
+    height: 20px;
+    /* padding-bottom: 15px; */
+    margin-top: 5px;
+    text-align: center;
+    padding-bottom: 25px;
+    /*margin-right: 20px;*/
+  }
+
+  .vertical-design {
+    padding-top : 5px;
+    rotate: 90deg;
+    font-size: 14px;
+    margin-left: 5px;
+  }
+
+    .mobile-view {
+    display: none;
+  }
+
+    .nav-btn {
+      font-size: 10px;
+  width: 100px;
+  height: 30px;
+  /* padding-bottom: 15px; */
+  margin-top: 10px;
+  text-align: center;
+  padding-bottom: 20px;
+  /*margin-right: 4px;*/
+}
+
+   .nav-sideBarBtn {font-size: 10px;
+  width: 30px;
+  height: 23px;
+  /* padding-bottom: 15px; */
+  margin-top: 10px;
+  text-align: center;
+  padding-bottom: 4px;
+  /*margin-right: 4px;*/
+}
+
+    .logoSize {
+      margin-top: 17px;
+      margin-left: 5px;
+  width: 50px;
+  height: 40px;
+}
+
+/* .nav-lan  {
+  width: 40px;
+  height: 15px;
+} */
+
+  .flag{
+    /*margin-top: 6px;*/
+    width: 30px;
+    height: 25px;
+  }
+
+   .providerDesign {
+    width: 100px;
+    height: 130px;
+    margin-right: 38px;
+  }
+
+      .card-ratio {
+    width: 100px ;
+    height: 100px;
+  }
+  
+   .gameTabFontSize {
+    font-size: 8px;
+  }
+
+  .custom-icon {
+   width: 20px;
+  height: 18px;
+  }
+
+
+}
+
+
+@media screen and (max-width:1000px){
+  .bannerImg{
+    height: 300px;
+  }
+  .reelsContainer{
+    height: 80vh;
+  }
+}
+@media screen and (max-width:950px){
+  .promotionImg{
+    height: 250px;
+  }
+}
+@media screen and (max-width:800px){
+  .promotionImg{
+    height: 200px;
+  }
+}
+@media screen and (max-width:760px){
+  .bannerImg{
+    height: 250px;
+  }
+}
+ 
+@media screen and (max-width:550px){
+  th,td{
+    font-size: 13px;
+  }
+  .bannerImg{
+    height: 200px;
+  }
+}
+ 
+@media screen and (max-width:500px) {
+   
+  .footerMarqueeImg{
+    max-height: 40px;
+  }
+  .promotionImg{
+    height: 180px;
+  }
+  .popUpImg{
+    height: 230px;
+  }
+
+  table{
+    min-width: 400px;
+  }
+}
+@media screen and (max-width:450px) {
+  .promotionImg{
+    height: 150px;
+  }
+ 
+}
+@media screen and (max-width:420px) {
+  .popUpImg{
+    height: 200px;
+  }
+}
+@media screen and (max-width:400px){
+  .bannerImg{
+    height: 160px;
+  }
+  table{
+    min-width: 300px;
+  }
+}
+@media screen and (max-width:360px) {
+  .popUpImg{
+    height: 180px;
+  }
+}
+@media screen and (max-width:330px) {
+  .promotionImg{
+    height: 130px;
+  }
+}
+
+.gold-card {
+  border: 2px solid transparent;
+  border-radius: 1rem;
+  background-clip: padding-box;
+  position: relative;
+  background-origin: border-box;
+  box-shadow: 0 0 10px rgb#393e46;
+}
+
+.gold-card::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  z-index: -1;
+  /* background: #393e46; */
+  border-radius: inherit;
+}
+
+.scroll-row::-webkit-scrollbar {
+  height: 8px;
+}
+.scroll-row::-webkit-scrollbar-thumb {
+  background: rgb(255, 238, 0);
+  border-radius: 10px;
+}
+.scroll-row::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.my-swal-popup {
+  font-size: 12px;
+}
+
+.my-swal-text {
+  text-align: left;
+  /* height: 250px; */
+}
