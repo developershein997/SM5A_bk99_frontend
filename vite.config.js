@@ -11,6 +11,6 @@ export default defineConfig({
 
     // output dir
     build: {
-      outDir: 'c91_mk_build',
+      outDir: 'dist',
     },
 })

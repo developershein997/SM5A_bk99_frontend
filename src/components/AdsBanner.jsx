@@ -8,7 +8,7 @@ const AdsBanner = () => {
   const MySwal = withReactContent(Swal);
   const adsFire = () => {
     MySwal.fire({
-      imageUrl: "https://moneyking77.online/api/.."+ads_banner[0].img_url,
+      imageUrl: "https://lion11.online/api/.."+ads_banner[0].img_url,
       imageHeight: 150,
       width: '100%',
       text: ads_banner[0]?.text || '',

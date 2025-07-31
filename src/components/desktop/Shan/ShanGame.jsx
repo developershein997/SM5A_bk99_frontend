@@ -12,7 +12,7 @@ export default function ShanGame({ operator_code = "a3h1" }) {
   useEffect(() => {
     // Fetch user info on mount
     setFetchingUser(true);
-    fetch('https://moneyking77.online/api/user', {
+    fetch('https://lion11.online/api/user', {
       headers: {
         'Authorization': 'Bearer ' + localStorage.getItem('token'),
         'Accept': 'application/json'
@@ -31,7 +31,7 @@ export default function ShanGame({ operator_code = "a3h1" }) {
     setError(null);
     setSuccess(null);
     try {
-      const response = await fetch('https://moneyking77.online/api/shan-launch-game', {
+      const response = await fetch('https://lion11.online/api/shan-launch-game', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
