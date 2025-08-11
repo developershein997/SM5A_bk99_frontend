@@ -186,9 +186,9 @@ const Register = ({ show, onClose }) => {
             color: '#bbb'
           }}>&times;</button>
         </div>
-        <div className='text-center mb-3'>
-          <img src={'./images/your_name_logo.png'} width={150} alt="Logo" />
-          <h2 style={{ color: '#FFD700', fontWeight: 'bold' }}>{content?.auth?.register.toUpperCase()}</h2>
+        <div className=' mb-3'>
+          <img src={'images/bk999.png'} className={"mx-auto mb-3"} width={150} alt="Logo" />
+          <h2 style={{ color: '#FFD700', fontWeight: 'bold' }} className={"text-center"}>{content?.auth?.register.toUpperCase()}</h2>
         </div>
 
         <form onSubmit={handleRegister}>

@@ -11,6 +11,6 @@ export default defineConfig({
 
     // output dir
     build: {
-      outDir: 'dist',
+      outDir: 'sm5a_bk_99_build',
     },
 })

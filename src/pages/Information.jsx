@@ -71,175 +71,101 @@ const InformationPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#101223] via-[#1a1d3a] to-[#101223]">
-      {/* Header Section */}
-      <div className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/10 to-transparent"></div>
-        <div className="relative z-10">
-        <Marquee />
-        </div>
-      </div>
-
-      {/* Main Content */}
-      <div className="max-w-6xl mx-auto px-4 py-8">
-        {/* Page Header */}
-        <div className="text-center mb-8">
-          <div className="flex items-center justify-center mb-4">
-            <FaCog className="text-4xl text-yellow-400 mr-3" />
-            <h1 className="text-3xl md:text-4xl font-bold text-white bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
-              Account Information
-            </h1>
+      <div className="min-h-screen bg-gradient-to-br from-[#101223] via-[#1a1d3a] to-[#101223]">
+        {/* Header Section */}
+        <div className="relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/10 to-transparent"></div>
+          <div className="relative z-10">
+            <Marquee />
           </div>
-          <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-            Manage your profile, transfer funds, and view your transaction history
-          </p>
         </div>
 
-        {/* Tab Navigation */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-          {tabs.map((tabItem) => (
-            <div
-              key={tabItem.id}
-              className="group relative cursor-pointer"
-              onClick={() => handleTabChange(tabItem.id)}
-            >
-              <div className={`bg-gradient-to-br from-[#181A29] to-[#1f2338] rounded-2xl p-6 shadow-lg border transition-all duration-300 transform hover:scale-105 hover:shadow-2xl ${
-                activeTab === tabItem.id
-                  ? `border-yellow-400/50 shadow-yellow-400/20`
-                  : `border-gray-700/50 hover:border-yellow-400/30`
-              }`}>
-                {/* Background Glow Effect */}
-                <div className={`absolute inset-0 rounded-2xl bg-gradient-to-r ${tabItem.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}></div>
-                
-                {/* Content */}
-                <div className="relative z-10 text-center">
-                  <div className={`w-16 h-16 mx-auto mb-4 ${tabItem.bgColor} rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                    <div className={tabItem.iconColor}>
-                      {tabItem.icon}
+        {/* Main Content */}
+        <div className="max-w-6xl mx-auto px-3 py-6 sm:px-4 sm:py-8">
+          {/* Page Header */}
+          <div className="text-center mb-6 sm:mb-8">
+            <div className="flex items-center justify-center mb-3 sm:mb-4">
+              <FaCog className="text-3xl sm:text-4xl text-yellow-400 mr-2 sm:mr-3" />
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
+                Account Information
+              </h1>
+            </div>
+            {/* <p className="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto">
+              Manage your profile, transfer funds, and view your transaction history
+            </p> */}
+          </div>
+
+          {/* Tab Navigation */}
+
+
+          {/* Active Tab Content */}
+          <div className="relative">
+            {isLoading && (
+                <div className="absolute inset-0 bg-black/50 rounded-2xl flex items-center justify-center z-10">
+                  <div className="text-center">
+                    <div className="animate-spin rounded-full h-10 w-10 sm:h-12 sm:w-12 border-b-2 border-yellow-400 mx-auto mb-3 sm:mb-4"></div>
+                    <p className="text-white text-sm sm:text-base">Loading...</p>
+                  </div>
+                </div>
+            )}
+
+            <div className="bg-gradient-to-br from-[#181A29] to-[#1f2338] rounded-2xl p-3 sm:p-5 md:p-6 shadow-2xl border border-gray-700/50">
+              {/* Tab Header */}
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-5 sm:mb-6 md:mb-8">
+                <div className="flex items-center gap-3 sm:gap-4">
+                  <div className={`w-10 h-10 sm:w-12 sm:h-12 ${getActiveTab()?.bgColor} rounded-full flex items-center justify-center`}>
+                    <div className={getActiveTab()?.iconColor}>
+                      {getActiveTab()?.icon}
                     </div>
                   </div>
-                  
-                  <h3 className={`text-lg font-bold mb-2 transition-colors duration-300 ${
-                    activeTab === tabItem.id ? 'text-yellow-400' : 'text-white group-hover:text-yellow-400'
-                  }`}>
-                    {tabItem.title}
-                  </h3>
-                  
-                  <p className="text-gray-400 text-sm">
-                    {tabItem.description}
-                  </p>
-                  
-                  {/* Active Indicator */}
-                  {activeTab === tabItem.id && (
-                    <div className="mt-4">
-                      <div className={`w-8 h-1 bg-gradient-to-r ${tabItem.color} mx-auto rounded-full`}></div>
+                  <div>
+                    <h2 className="text-base sm:text-lg md:text-xl font-bold text-white">{getActiveTab()?.title}</h2>
+                    <p className="text-gray-400 text-sm">{getActiveTab()?.description}</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-1.5">
+                  <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                  <span className="text-green-400 text-xs font-medium">Active</span>
+                </div>
+              </div>
+
+              {/* Tab Content */}
+              <div className="min-h-[250px] sm:min-h-[300px] md:min-h-[400px] space-y-5 sm:space-y-6">
+                {activeTab === "profile" && (
+                    <div>
+                      <div className="flex items-center gap-2 mb-4 sm:mb-5">
+                        <FaShieldAlt className="text-yellow-400 text-base sm:text-lg" />
+                        <h3 className="text-base sm:text-lg font-semibold text-white">Profile Management</h3>
+                      </div>
+                      <Profile />
                     </div>
-                  )}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+                )}
 
-        {/* Active Tab Content */}
-        <div className="relative">
-          {/* Loading Overlay */}
-          {isLoading && (
-            <div className="absolute inset-0 bg-black/50 rounded-2xl flex items-center justify-center z-10">
-              <div className="text-center">
-                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-yellow-400 mx-auto mb-4"></div>
-                <p className="text-white">Loading...</p>
-              </div>
-            </div>
-          )}
+                {activeTab === "transfer" && (
+                    <div>
+                      <div className="flex items-center gap-2 mb-4 sm:mb-5">
+                        <FaWallet className="text-green-400 text-base sm:text-lg" />
+                        <h3 className="text-base sm:text-lg font-semibold text-white">Money Transfer</h3>
+                      </div>
+                      <MoneyTransfer />
+                    </div>
+                )}
 
-          {/* Content Container */}
-          <div className="bg-gradient-to-br from-[#181A29] to-[#1f2338] rounded-3xl p-8 shadow-2xl border border-gray-700/50">
-            {/* Tab Header */}
-            <div className="flex items-center justify-between mb-8">
-              <div className="flex items-center gap-4">
-                <div className={`w-12 h-12 ${getActiveTab()?.bgColor} rounded-full flex items-center justify-center`}>
-                  <div className={getActiveTab()?.iconColor}>
-                    {getActiveTab()?.icon}
-                  </div>
-                </div>
-                <div>
-                  <h2 className="text-2xl font-bold text-white">{getActiveTab()?.title}</h2>
-                  <p className="text-gray-400">{getActiveTab()?.description}</p>
-                </div>
+                {activeTab === "logs" && (
+                    <div>
+                      <div className="flex items-center gap-2 mb-4 sm:mb-5">
+                        <FaChartLine className="text-purple-400 text-base sm:text-lg" />
+                        <h3 className="text-base sm:text-lg font-semibold text-white">Transaction Logs</h3>
+                      </div>
+                      <Log />
+                    </div>
+                )}
               </div>
-              
-              {/* Additional Actions */}
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                <span className="text-green-400 text-sm font-medium">Active</span>
-              </div>
-            </div>
-
-            {/* Tab Content */}
-            <div className="min-h-[400px]">
-              {activeTab === "profile" && (
-                <div className="space-y-6">
-                  <div className="flex items-center gap-3 mb-6">
-                    <FaShieldAlt className="text-yellow-400 text-xl" />
-                    <h3 className="text-xl font-semibold text-white">Profile Management</h3>
-      </div>
-            <Profile />
-                </div>
-              )}
-              
-              {activeTab === "transfer" && (
-                <div className="space-y-6">
-                  <div className="flex items-center gap-3 mb-6">
-                    <FaWallet className="text-green-400 text-xl" />
-                    <h3 className="text-xl font-semibold text-white">Money Transfer</h3>
-                  </div>
-                  <MoneyTransfer />
-                </div>
-              )}
-              
-              {activeTab === "logs" && (
-                <div className="space-y-6">
-                  <div className="flex items-center gap-3 mb-6">
-                    <FaChartLine className="text-purple-400 text-xl" />
-                    <h3 className="text-xl font-semibold text-white">Transaction Logs</h3>
-                  </div>
-                  <Log />
-                </div>
-              )}
             </div>
           </div>
         </div>
-
-        {/* Quick Actions */}
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-gradient-to-br from-[#181A29] to-[#1f2338] rounded-2xl p-6 text-center border border-gray-700/50 hover:border-yellow-400/30 transition-all duration-300">
-            <div className="w-12 h-12 bg-blue-400/20 rounded-full flex items-center justify-center mx-auto mb-4">
-              <FaUser className="text-blue-400 text-xl" />
-            </div>
-            <h3 className="text-white font-semibold mb-2">Profile Security</h3>
-            <p className="text-gray-400 text-sm">Keep your account information secure and up to date</p>
-          </div>
-          
-          <div className="bg-gradient-to-br from-[#181A29] to-[#1f2338] rounded-2xl p-6 text-center border border-gray-700/50 hover:border-yellow-400/30 transition-all duration-300">
-            <div className="w-12 h-12 bg-green-400/20 rounded-full flex items-center justify-center mx-auto mb-4">
-              <FaWallet className="text-green-400 text-xl" />
-            </div>
-            <h3 className="text-white font-semibold mb-2">Secure Transfers</h3>
-            <p className="text-gray-400 text-sm">Transfer funds safely between your accounts</p>
-          </div>
-          
-          <div className="bg-gradient-to-br from-[#181A29] to-[#1f2338] rounded-2xl p-6 text-center border border-gray-700/50 hover:border-yellow-400/30 transition-all duration-300">
-            <div className="w-12 h-12 bg-purple-400/20 rounded-full flex items-center justify-center mx-auto mb-4">
-              <FaChartLine className="text-purple-400 text-xl" />
-            </div>
-            <h3 className="text-white font-semibold mb-2">Transaction History</h3>
-            <p className="text-gray-400 text-sm">Track all your financial activities and transactions</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+      </div>)
 };
 
 export default InformationPage;

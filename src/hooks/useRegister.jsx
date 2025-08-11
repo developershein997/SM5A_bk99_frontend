@@ -22,6 +22,7 @@ const useRegister = () => {
                 setToken(res.data.data.token); // Use context setToken
                 updateProfile(res.data.data.user); // Update profile in context
                 navigate('/?type=all');
+                window.location.reload()
                 message.success('Registered Successfully.');
                 return res.data.data.user;
             }

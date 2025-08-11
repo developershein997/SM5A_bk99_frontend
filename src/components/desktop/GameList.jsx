@@ -124,20 +124,6 @@ export function GameList({loading, games}) {
       setLaunchingGameId(null);
     }
   };
-  
-  const displayGames = searchTerm
-    ? allGames.filter((game) =>
-        game.game_name.toLowerCase().includes(searchTerm.toLowerCase())
-      )
-    : allGames;
-
-  if (loading && displayGames.length === 0) return (
-    <div className="flex justify-center items-center py-8 w-full">
-      <div className="w-8 h-8 border-4 border-yellow-400 border-t-transparent rounded-full animate-spin" />
-    </div>
-  );
-  if (!displayGames || displayGames.length === 0)
-    return <p className="text-center text-gray-400 py-6">{content?.no_data || "No games found."}</p>;
 
   let customGameTypes;
 
@@ -171,16 +157,104 @@ export function GameList({loading, games}) {
       break;
   }
 
+
+  const displayGames = searchTerm
+    ? allGames.filter((game) =>
+        game.game_name.toLowerCase().includes(searchTerm.toLowerCase())
+      )
+    : allGames;
+
+  if (loading && displayGames.length === 0) return (
+    <div className="flex justify-center items-center py-8 w-full">
+      <div className="w-8 h-8 border-4 border-yellow-400 border-t-transparent rounded-full animate-spin" />
+    </div>
+  );
+  if (!displayGames || displayGames.length === 0)
+    return (<>
+      <div className="scroll-container ">
+        <RelatedProviderLists customGameType={customGameTypes} />
+      </div>
+      <div className="flex justify-end mb-3">
+        <input
+            className="px-3 py-2 rounded-lg bg-[#23243a] text-white placeholder-gray-400 border border-yellow-400/60 focus:outline-none focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400 w-full max-w-xs transition"
+            placeholder="Search..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+        />
+      </div>
+      <p className="text-center text-gray-400 py-6">{content?.no_data || "No games found."}</p>
+
+      <style jsx>{`
+    .scroll-container {
+      display: flex;
+      overflow-x: auto;
+    
+      gap: 0.5rem;
+      //padding-bottom: 0rem;
+      scroll-snap-type: x mandatory;
+      padding-bottom: 2px;
+      scrollbar-width: thin;
+      scrollbar-color: #FFD700 #23272f;
+    }
+    //.scroll-container::-webkit-scrollbar {
+    //  display: none; /* Chrome, Safari */
+    //}
+
+    .custom-margin {
+      margin-top: 5px;
+    }
+
+    @media (max-width: 986px) { 
+        .custom-margin {
+          margin-top: -15px;
+        }
+    }
+      
+    
+  `}</style>
+    </>);
+
   console.log('customGameTypes', customGameTypes);
   return (
       <>
+
         {launchError && (
-        <div className="mb-3">
-          <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-2 rounded relative text-center">
+            <div className="mb-3">
+              <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-2 rounded relative text-center">
                 {launchError}
               </div>
             </div>
         )}
+        <div className="scroll-container ">
+          <RelatedProviderLists customGameType={customGameTypes} />
+        </div>
+
+        <style jsx>{`
+    .scroll-container {
+      display: flex;
+      overflow-x: auto;
+    
+      gap: 0.5rem;
+      padding-bottom: 2px;
+      scrollbar-width: thin;
+      scrollbar-color: #FFD700 #23272f;
+    }
+    .scroll-container::-webkit-scrollbar {
+      //display: none; /* Chrome, Safari */
+    }
+
+    .custom-margin {
+      margin-top: 5px;
+    }
+
+    @media (max-width: 986px) { 
+        .custom-margin {
+          margin-top: -13px;
+        }
+    }
+      
+    
+  `}</style>
 
       <div className="flex justify-end mb-3">
           <input

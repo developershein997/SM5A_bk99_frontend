@@ -49,31 +49,32 @@ const Log = () => {
   ];
 
   return (
-    <div className="w-full max-w-3xl mx-auto my-4 mb-5 pb-5 px-2">
-      <div className="flex flex-row items-center justify-center gap-2 mb-8">
-        {tabs.map((tab, index) => (
-          <Link
-            to={tab.link}
-            key={index}
-            className={`flex flex-col items-center justify-center px-4 py-3 rounded-2xl font-semibold text-base md:text-lg transition-all duration-200 cursor-pointer focus:outline-none border-2 border-transparent hover:scale-105 hover:shadow-xl ${
-              type === tab.value
-                ? tab.active
-                : `${tab.bg} ${tab.text} hover:border-yellow-400/60`
-            }`}
-            style={{ minWidth: '90px' }}
-          >
-            <span className="mb-1">{tab.icon}</span>
-            <span>{tab.name}</span>
-          </Link>
-        ))}
+      <div className="w-full max-w-3xl mx-auto my-4 mb-5 pb-5 px-2">
+        <div className="flex flex-row items-center justify-center gap-2 mb-8">
+          {tabs.map((tab, index) => (
+              <Link
+                  to={tab.link}
+                  key={index}
+                  className={`flex flex-col items-center justify-center px-2 py-2 rounded-xl font-medium text-sm md:text-base transition-all duration-200 cursor-pointer focus:outline-none border-2 border-transparent hover:scale-105 hover:shadow-xl ${
+                      type === tab.value
+                          ? tab.active
+                          : `${tab.bg} ${tab.text} hover:border-yellow-400/60`
+                  }`}
+                  style={{ minWidth: '80px' }}
+              >
+                <span className="mb-1 text-xs md:text-sm">{tab.icon}</span>
+                <span className="text-xs md:text-sm">{tab.name}</span>
+              </Link>
+          ))}
+        </div>
+
+        {/* cash in */}
+        {type === "deposit" && <DepositLog />}
+        {/* cash out */}
+        {type === "withdraw" && <WithdrawLog />}
+        {/* game logs */}
+        {type === "game_logs" && <GameLogs />}
       </div>
-      {/* cash in */}
-      {type === "deposit" && <DepositLog />}
-      {/* cash out */}
-      {type === "withdraw" && <WithdrawLog />}
-      {/* game logs */}
-      {type === "game_logs" && <GameLogs />}
-    </div>
   )
 }
 

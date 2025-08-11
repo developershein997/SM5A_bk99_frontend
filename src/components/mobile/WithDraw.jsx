@@ -48,7 +48,7 @@ const WithDraw = () => {
               <select className="w-full bg-gray-800 text-white border-b border-gray-500 rounded-lg py-1 px-2 focus:outline-none" onChange={e => setPayment(e.target.value)} value={payment}>
                 <option value="">{content?.wallet?.choose_bank}</option>
                 {banks && banks.map((item, index) => (
-                  <option key={index} value={item.id}>{item.payment_type}</option>
+                  <option key={index} value={item.id}>{item.bank_name}</option>
                 ))}
               </select>
               {error && error.payment_type_id && <span className="text-red-400 text-xs block mt-1">*ငွေပေးချေမှုနည်းလမ်း ရွေးချယ်ပါ။</span>}

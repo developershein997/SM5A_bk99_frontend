@@ -34,7 +34,7 @@ const Login = ({ show, handleClose }) => {
 
   return (
     // Custom Modal Overlay (replaces react-bootstrap Modal)
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70 backdrop-blur-sm">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70 backdrop-blur-sm" style={{ backgroundColor: 'rgba(0,0,0,0.7)'}}>
       {/* Modal Content */}
       <div className="bg-[#212121] p-8 rounded-2xl w-full max-w-md text-white shadow-2xl border border-gray-700 relative">
         {/* Close Button */}
@@ -50,7 +50,7 @@ const Login = ({ show, handleClose }) => {
         {/* Logo and Title */}
         <div className="text-center mb-6">
           {/* Assuming logo.png is in the public/images folder or accessible via a direct URL */}
-          <img src={logo} width={220} alt="logo" className="mx-auto mb-3" />
+          <img src={"images/bk999.png"} width={220} alt="logo" className="mx-auto mb-3" />
           <h4 className="text-[#FFD700] font-bold text-2xl">{content?.auth?.login.toUpperCase()}</h4>
         </div>
 

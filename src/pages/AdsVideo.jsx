@@ -17,7 +17,7 @@ const AdsVideo = () => {
     </div>
     <div className='container py-5'>
       <div className='text-center mb-5'>
-        <h1 className="fw-bold text-warning d-inline-block pb-2 px-4" style={{ borderBottom: '3px solid #FFD700', letterSpacing: '1px' }}>
+        <h1 className="fw-bold text-warning d-inline-block pb-2 px-4" style={{ borderBottom: '3px solid #FFD700', letterSpacing: '1px',color:"#FAC200" }}>
           {content?.nav?.ads_video || "Ads Video"}
         </h1>
       </div>
