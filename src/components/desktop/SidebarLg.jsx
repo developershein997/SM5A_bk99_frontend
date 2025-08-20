@@ -77,7 +77,7 @@ const SidebarLg = ({ show, onClose }) => {
   return (
     <>
       <div
-          className={`fixed right-0 top-1/7 -translate-y-1/2 bg-[#181c2f] z-50 
+          className={`fixed right-0 top-1/11 -translate-y-1/2 bg-[#181c2f] z-50 
     transition-transform duration-300 ${show ? 'translate-x-0' : 'translate-x-full'} 
     flex flex-col w-80 max-w-full h-auto rounded-lg shadow-lg  `}
       >

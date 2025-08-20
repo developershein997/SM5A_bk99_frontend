@@ -5,13 +5,15 @@ import { GeneralContext } from '../contexts/GeneralContext';
 
 const AdsBanner = () => {
   const {ads_banner} = useContext(GeneralContext);
+  
   const MySwal = withReactContent(Swal);
   const adsFire = () => {
     MySwal.fire({
-      imageUrl: "https://lion11.online/api/.."+ads_banner[0].img_url,
+      imageUrl: "https://lion11.online/api/.."+ads_banner?.img_url,
+         
       imageHeight: 150,
       width: '100%',
-      text: ads_banner[0]?.text || '',
+      // text: ads_banner[0]?.text || '',
       confirmButtonText: 'OK',
       customClass: {
         popup: 'my-swal-popup',
@@ -19,9 +21,17 @@ const AdsBanner = () => {
       }
     })
   }
+
+
+
   useEffect(() => {
-    if (ads_banner?.length > 0 && ads_banner[0]?.img_url) {
+    if (
+      !sessionStorage.getItem('adsShown') &&
+      ads_banner &&
+      ads_banner.img_url
+    ) {
       adsFire();
+      sessionStorage.setItem('adsShown', 'true');
     }
   }, [ads_banner]);
 
